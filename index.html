@@ -1,0 +1,2554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 22nd Birthday Geetha! 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Permanent+Marker&family=Indie+Flower&family=Dancing+Script:wght@700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Indie Flower', cursive;
+            background: linear-gradient(135deg, #2a1a3e 0%, #3d1f52 25%, #1a1a2e 50%, #2a1a3e 75%, #3d1f52 100%);
+            background-size: 400% 400%;
+            background-attachment: fixed;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 105, 180, 0.15) 0%, transparent 60%),
+                        radial-gradient(circle at 30% 60%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 40%, rgba(200, 100, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+            animation: pulseOverlay 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseOverlay {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .floating-butterfly {
+            position: fixed;
+            font-size: 2.5em;
+            z-index: 8;
+            pointer-events: none;
+            animation: butterfly-flight 12s infinite ease-in-out;
+            filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.8));
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+        }
+
+        @keyframes butterfly-flight {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-150px) translateX(100px) rotate(45deg) scale(1.1);
+            }
+            50% {
+                transform: translateY(-300px) translateX(-50px) rotate(-30deg) scale(1);
+            }
+            75% {
+                transform: translateY(-150px) translateX(120px) rotate(60deg) scale(1.1);
+            }
+            100% {
+                transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Custom Image Stickers - Fixed Positioning */
+        .image-sticker {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.8), 
+                        0 5px 15px rgba(0, 0, 0, 0.3),
+                        inset 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: stickerFloat 4s ease-in-out infinite;
+            filter: drop-shadow(0 8px 20px rgba(255, 105, 180, 0.8)) 
+                    drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));
+            z-index: 50;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+        }
+
+        .image-sticker:hover {
+            transform: scale(1.3) rotate(15deg) translateZ(50px);
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 1), 
+                        0 10px 25px rgba(0, 0, 0, 0.5),
+                        inset 0 0 30px rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 215, 0, 1);
+            z-index: 100;
+            filter: drop-shadow(0 12px 30px rgba(255, 105, 180, 1)) 
+                    drop-shadow(0 0 50px rgba(255, 215, 0, 0.8))
+                    brightness(1.1);
+        }
+
+        .image-sticker.small {
+            width: 100px;
+            height: 100px;
+        }
+
+        .image-sticker.medium {
+            width: 130px;
+            height: 130px;
+        }
+
+        .image-sticker.large {
+            width: 160px;
+            height: 160px;
+        }
+
+        @keyframes stickerFloat {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+            25% { 
+                transform: translateY(-20px) translateX(10px) rotate(5deg);
+            }
+            50% { 
+                transform: translateY(-35px) translateX(-10px) rotate(-5deg);
+            }
+            75% { 
+                transform: translateY(-20px) translateX(10px) rotate(5deg);
+            }
+        }
+
+        .image-sticker.spin {
+            animation: stickerSpin 6s linear infinite;
+        }
+
+        @keyframes stickerSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .image-sticker.bounce {
+            animation: stickerBounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes stickerBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+
+        .image-sticker.pulse {
+            animation: stickerPulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes stickerPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 10px 35px rgba(255, 105, 180, 0.7);
+            }
+            50% { 
+                transform: scale(1.2);
+                box-shadow: 0 15px 50px rgba(255, 105, 180, 1), 0 0 35px rgba(255, 215, 0, 0.8);
+            }
+        }
+        
+        #progressBar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 999;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+        }
+        
+        #progressBar .bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #FF69B4, #FFD700, #FF69B4);
+            transition: width 0.1s linear;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+            position: relative;
+            animation: slideDown 1s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #C868FF, #FF69B4, #FFD700);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite, textFloat 3s ease-in-out infinite;
+            text-shadow: 3px 3px 0px rgba(255, 105, 180, 0.3);
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+
+        @keyframes textFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .header .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2em;
+            color: #fff;
+            display: inline-block;
+            background: linear-gradient(135deg, #FF69B4, #FFD700, #FF1493);
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite, bounce 2s ease-in-out infinite;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .date-tag {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FF69B4);
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite;
+            color: #fff;
+            padding: 15px 25px;
+            font-family: 'Dancing Script', cursive;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255, 105, 180, 0.4);
+            z-index: 100;
+            border-radius: 50px;
+            font-size: 1.2em;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .date-tag:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 105, 180, 0.6);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .intro-section {
+            background: linear-gradient(135deg, rgba(45, 20, 70, 0.95), rgba(30, 15, 50, 0.95));
+            padding: 50px;
+            margin: 30px 0;
+            border: 3px solid #FFD700;
+            border-radius: 30px;
+            position: relative;
+            backdrop-filter: blur(15px);
+            animation: fadeInUp 1s ease-out 0.2s both;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            overflow: visible;
+        }
+
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .intro-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #FFD700;
+            margin-bottom: 20px;
+            animation: textGlow 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 105, 180, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 105, 180, 0.6); }
+        }
+        
+        .intro-section p {
+            color: #f0e6ff;
+            font-size: 1.4em;
+            line-height: 2;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .special-note {
+            background: linear-gradient(135deg, #FF69B4, #FF1493, #C868FF);
+            background-size: 200% auto;
+            animation: gradientShift 4s ease infinite, pulse 3s ease-in-out infinite;
+            color: #fff;
+            padding: 35px;
+            margin: 30px 0;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            line-height: 2;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 20px 50px rgba(255, 105, 180, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+            50% { box-shadow: 0 20px 70px rgba(255, 105, 180, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
+        }
+        
+        .scrapbook-grid {
+            display: grid;
+            gap: 60px;
+            margin: 60px 0;
+        }
+        
+        .memory-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            min-height: 500px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .memory-item.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .memory-item:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .memory-item:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .photo-frame {
+            position: relative;
+            perspective: 1000px;
+            transition: all 0.3s;
+        }
+        
+        .photo-frame:hover {
+            transform: rotateY(10deg) scale(1.08);
+            z-index: 10;
+        }
+        
+        .photo-polaroid {
+            background: linear-gradient(135deg, #fff, #f8f8f8);
+            padding: 20px;
+            padding-bottom: 70px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(255, 105, 180, 0.3);
+            position: relative;
+            transform-style: preserve-3d;
+            animation: floatIn 0.8s ease-out;
+            border-radius: 5px;
+        }
+        
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 400px;
+            background-size: contain;
+            background-position: 30px 30px; /* px by px control */
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+        }
+        
+        .photo-caption {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8em;
+            color: #FF69B4;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .story-box {
+            background: linear-gradient(135deg, rgba(80, 40, 120, 0.98), rgba(60, 25, 90, 0.98));
+            padding: 45px;
+            border-radius: 30px;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 105, 180, 0.4);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .story-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.15) 0%, transparent 50%, rgba(255, 215, 0, 0.1) 100%);
+            pointer-events: none;
+            border-radius: 30px;
+        }
+
+        .story-box::after {
+            content: '💕';
+            position: absolute;
+            font-size: 4em;
+            opacity: 0.1;
+            right: -20px;
+            top: -20px;
+            transform: rotate(-30deg);
+        }
+
+        .story-box:hover {
+            box-shadow: 0 40px 100px rgba(255, 105, 180, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 105, 180, 0.7);
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, rgba(100, 50, 140, 0.98), rgba(80, 35, 110, 0.98));
+        }
+        
+        .story-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2em;
+            background: linear-gradient(135deg, #FFD700, #FF69B4, #FF1493);
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite, titlePulse 2s ease-in-out infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+        }
+        
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .story-content {
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.25em;
+            color: #e8d5ff;
+            line-height: 2;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .story-content::-webkit-scrollbar-track {
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 10px;
+        }
+
+        .story-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #FF69B4, #FFD700);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+        
+        .final-message {
+            background: linear-gradient(135deg, rgba(80, 40, 120, 0.95), rgba(60, 25, 90, 0.95));
+            padding: 70px;
+            margin: 60px 0;
+            text-align: center;
+            border-radius: 40px;
+            box-shadow: 0 40px 100px rgba(255, 215, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            position: relative;
+            backdrop-filter: blur(15px);
+            animation: fadeInUp 1s ease-out 0.6s both;
+            border: 3px solid rgba(255, 105, 180, 0.5);
+            overflow: visible;
+        }
+
+        .final-message::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+            z-index: 0;
+        }
+        
+        .final-message h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #C868FF);
+            background-size: 300% auto;
+            animation: gradientShift 4s ease infinite, bounce 2s ease-in-out infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .final-message p {
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.5em;
+            color: #f0e6ff;
+            line-height: 2;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #FF69B4, #FFD700, #C868FF, #FF69B4);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 40px;
+            animation: gradientShift 3s ease infinite, signatureFloat 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.6));
+            letter-spacing: 3px;
+        }
+
+        @keyframes signatureFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.05); }
+        }
+        
+        /* Enhanced Dynamic Effects */
+        
+        /* Enhanced Confetti System */
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: #FF69B4;
+            animation: confetti-fall 4s linear forwards;
+            z-index: 1000;
+            pointer-events: none;
+            border-radius: 2px;
+            box-shadow: 0 0 6px rgba(255, 105, 180, 0.8);
+        }
+        
+        .confetti.heart {
+            width: 15px;
+            height: 15px;
+            background: transparent;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .confetti.star {
+            width: 16px;
+            height: 16px;
+            background: transparent;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .confetti:nth-child(odd) {
+            background: #FFD700;
+            animation-delay: 0.1s;
+        }
+
+        .confetti:nth-child(3n) {
+            background: #C868FF;
+            animation-delay: 0.2s;
+        }
+
+        .confetti:nth-child(4n) {
+            background: #FF1493;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(20vh) rotate(360deg) scale(1.2);
+            }
+            100% {
+                transform: translateY(120vh) rotate(720deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Typing Animation */
+        .typing-text {
+            overflow: hidden;
+            border-right: 3px solid #FF69B4;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #FF69B4; }
+        }
+
+        /* Floating Hearts that follow cursor */
+        .floating-heart {
+            position: fixed;
+            font-size: 2em;
+            color: #FF69B4;
+            pointer-events: none;
+            z-index: 999;
+            animation: heartFloat 2s ease-out forwards;
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.8));
+        }
+
+        @keyframes heartFloat {
+            0% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0.5) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        /* Photo Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(255, 105, 180, 0.8);
+            animation: lightboxZoom 0.3s ease-out;
+        }
+
+        @keyframes lightboxZoom {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 3em;
+            cursor: pointer;
+            z-index: 2001;
+            transition: transform 0.3s;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2) rotate(90deg);
+        }
+
+        /* Enhanced Hover Effects */
+        .memory-item:hover .photo-polaroid {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 30px 80px rgba(255, 105, 180, 0.6), 0 0 60px rgba(255, 215, 0, 0.4);
+        }
+
+        .story-box:hover .story-title {
+            animation: titleGlow 1s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { 
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 105, 180, 0.6);
+            }
+            50% { 
+                text-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 105, 180, 0.8);
+            }
+        }
+
+        /* Pulsing Background Elements */
+        .pulse-bg {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 70%);
+            animation: pulseBg 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes pulseBg {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% { 
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+        }
+
+        /* Interactive Sparkles */
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: sparkleTwinkle 1.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sparkleTwinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Enhanced Button Effects */
+        .dynamic-button {
+            background: linear-gradient(45deg, #FF69B4, #FFD700, #C868FF);
+            background-size: 300% 300%;
+            animation: gradientShift 3s ease infinite;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dynamic-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .dynamic-button:hover::before {
+            left: 100%;
+        }
+
+        .dynamic-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.6);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            animation: floatRandom 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes floatRandom {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-40px) translateX(-5px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-20px) translateX(15px) rotate(270deg);
+            }
+        }
+
+        /* Enhanced Dynamic Effects */
+        
+        /* Text Wave Animation */
+        .wave-text {
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        .wave-text:nth-child(1) { animation-delay: 0s; }
+        .wave-text:nth-child(2) { animation-delay: 0.1s; }
+        .wave-text:nth-child(3) { animation-delay: 0.2s; }
+        .wave-text:nth-child(4) { animation-delay: 0.3s; }
+        .wave-text:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Rainbow Text Animation */
+        .rainbow-text {
+            background: linear-gradient(45deg, #FF69B4, #FFD700, #C868FF, #FF1493, #FF69B4);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbowShift 3s ease infinite;
+        }
+
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Balloons */
+        .floating-balloon {
+            position: fixed;
+            font-size: 3em;
+            animation: balloonFloat 6s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+            filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.6));
+        }
+
+        @keyframes balloonFloat {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-100px) translateX(50px) rotate(10deg);
+                opacity: 1;
+            }
+        }
+
+        /* Animated 3D Clouds */
+        .cloud {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50px;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 3;
+            animation: cloudDrift 20s linear infinite;
+            filter: blur(1px);
+        }
+        
+        .cloud::before {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            opacity: 0.8;
+        }
+        
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50px;
+            opacity: 0.9;
+        }
+        
+        /* Multi-puff cloud designs */
+        .cloud-1 {
+            width: 80px;
+            height: 40px;
+            top: 10%;
+            left: -100px;
+            animation-duration: 25s;
+        }
+        
+        .cloud-1::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+        
+        .cloud-1::after {
+            width: 60px;
+            height: 35px;
+            top: -15px;
+            right: 10px;
+        }
+        
+        .cloud-2 {
+            width: 100px;
+            height: 50px;
+            top: 25%;
+            left: -120px;
+            animation-duration: 30s;
+            animation-delay: 5s;
+        }
+        
+        .cloud-2::before {
+            width: 70px;
+            height: 60px;
+            top: -30px;
+            left: 20px;
+        }
+        
+        .cloud-2::after {
+            width: 40px;
+            height: 40px;
+            top: -10px;
+            right: 15px;
+        }
+        
+        .cloud-3 {
+            width: 90px;
+            height: 45px;
+            top: 15%;
+            left: -110px;
+            animation-duration: 35s;
+            animation-delay: 10s;
+        }
+        
+        .cloud-3::before {
+            width: 55px;
+            height: 55px;
+            top: -20px;
+            left: 15px;
+        }
+        
+        .cloud-3::after {
+            width: 65px;
+            height: 30px;
+            top: -12px;
+            right: 5px;
+        }
+        
+        .cloud-4 {
+            width: 70px;
+            height: 35px;
+            top: 30%;
+            left: -90px;
+            animation-duration: 28s;
+            animation-delay: 15s;
+        }
+        
+        .cloud-4::before {
+            width: 45px;
+            height: 45px;
+            top: -20px;
+            left: 12px;
+        }
+        
+        .cloud-4::after {
+            width: 50px;
+            height: 25px;
+            top: -8px;
+            right: 8px;
+        }
+        
+        .cloud-5 {
+            width: 110px;
+            height: 55px;
+            top: 5%;
+            left: -130px;
+            animation-duration: 40s;
+            animation-delay: 20s;
+        }
+        
+        .cloud-5::before {
+            width: 75px;
+            height: 70px;
+            top: -35px;
+            left: 25px;
+        }
+        
+        .cloud-5::after {
+            width: 60px;
+            height: 40px;
+            top: -20px;
+            right: 20px;
+        }
+        
+        @keyframes cloudDrift {
+            0% {
+                transform: translateX(0) translateY(0px) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateX(calc(100vw + 200px)) translateY(-20px) scale(1.1);
+                opacity: 0;
+            }
+        }
+        
+
+        /* Enhanced Shooting Stars */
+        .shooting-star {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, #FFD700, #FFF);
+            border-radius: 50%;
+            animation: shootingStar 4s linear infinite;
+            pointer-events: none;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .shooting-star::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FFD700, #FFF, transparent);
+            transform: translateX(-80px) translateY(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+        
+        .shooting-star::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.6), transparent);
+            transform: translateX(-40px) translateY(-50%);
+            border-radius: 1px;
+        }
+
+        @keyframes shootingStar {
+            0% {
+                transform: translateX(-100px) translateY(100px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100vw) translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* Magic Dust */
+        .magic-dust {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #FFD700, transparent);
+            border-radius: 50%;
+            animation: magicDust 2s ease-out infinite;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        @keyframes magicDust {
+            0% {
+                transform: translateY(0) scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-30px) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-60px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Glowing Orbs */
+        .glowing-orb {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.8), transparent);
+            animation: orbFloat 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+        }
+
+        @keyframes orbFloat {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-50px) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* Text Glow Effect */
+        .glow-text {
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 105, 180, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 215, 0, 0.6), 0 0 60px rgba(200, 104, 255, 0.4);
+            }
+        }
+
+        /* Bouncing Elements */
+        .bounce-element {
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0) rotate(180deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2) rotate(90deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        
+        .sticker {
+            position: absolute;
+            font-size: 4em;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5));
+            z-index: 2;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(15deg); }
+        }
+        
+        /* Simple Music Player - Just Image */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.9), rgba(255, 20, 147, 0.9));
+            border-radius: 50%;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.6), 0 0 15px rgba(255, 105, 180, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: musicPlayerPulse 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .music-player:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.6);
+        }
+
+        @keyframes musicPlayerPulse {
+            0%, 100% { box-shadow: 0 10px 40px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 105, 180, 0.4); }
+            50% { box-shadow: 0 15px 50px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.6); }
+        }
+        
+        .music-player .music-icon {
+            font-size: 1.8em;
+            color: white;
+            transition: transform 0.3s;
+        }
+        
+        .music-player:hover .music-icon {
+            transform: scale(1.2) rotate(20deg);
+        }
+        
+        @media (max-width: 768px) {
+            .memory-item {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 3em;
+            }
+            .header .subtitle {
+                font-size: 1.5em;
+            }
+            .image-sticker {
+                width: 80px;
+                height: 80px;
+            }
+            .image-sticker.small {
+                width: 60px;
+                height: 60px;
+            }
+            .image-sticker.medium {
+                width: 75px;
+                height: 75px;
+            }
+            .image-sticker.large {
+                width: 100px;
+                height: 100px;
+            }
+            
+            /* Mobile adjustments for new elements */
+            .cloud {
+                transform: scale(0.8);
+            }
+            
+            
+            .shooting-star {
+                width: 2px;
+                height: 2px;
+            }
+            
+            .shooting-star::before {
+                width: 60px;
+                height: 1.5px;
+            }
+            
+            .shooting-star::after {
+                width: 30px;
+            }
+            
+            .confetti {
+                width: 10px;
+                height: 10px;
+            }
+            
+            .confetti.heart,
+            .confetti.star {
+                width: 12px;
+                height: 12px;
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .cloud {
+                transform: scale(0.6);
+            }
+            
+            
+            .intro-section,
+            .final-message {
+                padding: 30px;
+                margin: 20px 0;
+            }
+            
+            .story-box {
+                padding: 30px;
+            }
+        }
+
+        /* Example: Custom styles for each memory's photo frame and polaroid */
+
+        /* Memory 1 */
+        .memory-item:nth-child(1) .photo-frame {
+            border: 4px solid #FFD700;
+            border-radius: 18px;
+            box-shadow: 0 0 40px #FFD70088, 0 10px 40px #FF69B488;
+            background: linear-gradient(135deg, #fffbe7 60%, #ffe0f7 100%);
+        }
+        .memory-item:nth-child(1) .photo-polaroid {
+            border-radius: 18px;
+            border: 3px dashed #FF69B4;
+            background: #fffbe7;
+        }
+
+        /* Memory 2 */
+        .memory-item:nth-child(2) .photo-frame {
+            border: 4px solid #C868FF;
+            border-radius: 30px 5px 30px 5px;
+            box-shadow: 0 0 30px #C868FF88, 0 10px 30px #FFD70088;
+            background: linear-gradient(135deg, #f8e8ff 60%, #e0e7ff 100%);
+        }
+        .memory-item:nth-child(2) .photo-polaroid {
+            border-radius: 30px 5px 30px 5px;
+            border: 3px dotted #FFD700;
+            background: #f8e8ff;
+        }
+
+        /* Memory 3 */
+        .memory-item:nth-child(3) .photo-frame {
+            border: 4px double #FF69B4;
+            border-radius: 50%;
+            box-shadow: 0 0 50px #FF69B488, 0 10px 50px #FFD70088;
+            background: linear-gradient(135deg, #fff0f6 60%, #ffe0f7 100%);
+        }
+        .memory-item:nth-child(3) .photo-polaroid {
+            border-radius: 1%;
+            border: 3px solid #C868FF;
+            background: #fff0f6;
+        }
+
+        /* Add more for .memory-item:nth-child(4), etc. as needed */
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <!-- Animated 3D Clouds -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+    
+    
+    <div id="progressBar">
+        <div class="bar"></div>
+    </div>
+    <div class="content-wrapper">
+        <div class="header">
+            <h1 class="typing-text rainbow-text glow-text">❤️ Happy 22nd Birthday, Geetha Lekshmi! ❤️</h1>
+            <div class="subtitle">To Dhanuka, my <span class="rainbow-text glow-text">Kolandhaaa</span> ❤️✨</div>
+            <div style="font-size: 2.5em; margin-top: 30px; animation: spin 8s linear infinite;">❤️🎈🎉🎊🎀💝🎂✨❤️🎈🎉❤️</div>
+        </div>
+        <div class="container">
+            <div class="intro-section">
+                <span class="sticker" style="top: 20px; right: 30px;">❤️</span>
+                <span class="sticker" style="bottom: 20px; left: 30px; animation-delay: 1s;">❤️</span>
+                <!-- Geetha's Photo Stickers - Top Right: Happy Smile -->
+                <img src="photo/uploaded_image_1.jpg.jpg" alt="Geetha Happy Smile" class="image-sticker medium pulse" style="top: -80px; right: 80px; animation-delay: 0.3s;" onclick="this.classList.toggle('spin')" onerror="this.style.display='none'">
+                <!-- Bottom Left: Dress Photo -->
+                <img src="photo/uploaded_image_2.jpg.jpg" alt="Geetha Pink Dress" class="image-sticker small bounce" style="bottom: -70px; left: 100px; animation-delay: 0.8s;" onclick="this.classList.toggle('pulse')" onerror="this.style.display='none'">
+                <h2>Hey Makaleyy! ❤️💫</h2>
+                <p>
+                    Happy Birthday to the most beautiful soul from Kanyakumari. ❤️ We were friends, and we still are—yet in my heart, I've always held something more. ❤️ Every photo in this little blog whispers the moments I wish meant more; each memory I treasure deeply, because I always love you. ❤️
+                </p>
+                <div class="special-note">
+                    💫❤️ In these four years, I've had the privilege of sharing countless moments with you—each one a treasure I hold close. ❤️ Your journey through college has been nothing short of inspiring; I often find myself wishing I had met you even earlier, to witness more of your growth and brilliance. ❤️<br><br>
+                    You are not just Geetha Lekshmi or Dhanuka to me—you are my Kolandhaaa. ❤️ Your presence has enriched my life in ways words can scarcely express. ❤️💕
+                </div>
+            </div>
+            <div class="scrapbook-grid" id="scrapbook">
+                <!-- Memory items will be inserted here -->
+            </div>
+            <div class="final-message">
+                <span class="sticker" style="top: 30px; right: 40px;">❤️</span>
+                <span class="sticker" style="bottom: 30px; left: 40px; animation-delay: 0.5s;">❤️</span>
+                <!-- Geetha's Photo Stickers for Final Message -->
+                <!-- Top Right: Happy Smile -->
+                <img src="photo/uploaded_image_3.jpg.jpg" alt="Geetha Happy" class="image-sticker large spin" style="top: -90px; right: 120px; animation-delay: 0.5s;" onclick="this.classList.toggle('bounce')" onerror="this.style.display='none'">
+                <!-- Bottom Left: College Uniform -->
+                <img src="photo/uploaded_image_4.jpg.jpg" alt="Geetha College" class="image-sticker medium pulse" style="bottom: -80px; left: 120px; animation-delay: 1s;" onclick="this.classList.toggle('spin')" onerror="this.style.display='none'">
+                <!-- Bottom Right: Pink Dress -->
+                <img src="photo/uploaded_image_1.jpg.jpg" alt="Geetha Pink Dress" class="image-sticker small bounce" style="bottom: 80px; right: 80px; animation-delay: 1.5s;" onclick="this.classList.toggle('pulse')" onerror="this.style.display='none'">
+                <h2>Cheers to 22, Kolandhaaa! ❤️🥳🎉🎊</h2>
+                <p>
+                    Sorry da if I ever hurt you in any way — I never wanted to see you upset, not even for a second. 😔💔❤️ You've been such a big part of my life; my happiest memories in college all begin and end with you. ❤️💕✨ Thank you for letting me be there, for every smile 😊, every small talk 💬, and every moment that made my world brighter just because you were in it. ❤️🌟<br><br>
+                    There are so many memories of us, but I've written only a few here. Still, every one of them holds a heartbeat ❤️💓 — a feeling I can never forget. You've been my peace ☮️❤️, my chaos 🌪️❤️, my favourite story to remember again and again. 📖❤️💖<br><br>
+                    You'll always have a place in my heart, Kolandhaaa — no matter where life takes us. ❤️💝 Wishing you a birthday as beautiful as your smile 😍❤️ and a life filled with love ❤️💕, laughter 😄❤️, and every dream you deserve. ❤️🌈✨
+                </p>
+                <p class="signature">
+                    With all my love ❤️💕💜💖,<br>
+                    Aimnorth ❤️💜<br><br>
+                    Your friend… who still calls you Kolandhaaa, with love every single time. ❤️💝<br><br>
+                    <strong>I love Geetha! ❤️💖✨</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Simple Music Player - Just Icon -->
+    <div class="music-player" id="musicToggle">
+        <div class="music-icon">🎵</div>
+        <audio id="backgroundMusic" loop autoplay muted>
+            <source src="audio/audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <!-- Lightbox for Photo Zoom -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" onclick="closeLightbox()">×</div>
+        <img class="lightbox-content" id="lightboxImage" src="" alt="">
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Optimized Three.js 3D Scene Setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ 
+            canvas: document.getElementById('canvas'), 
+            alpha: true, 
+            antialias: false, // Disable antialiasing for better performance
+            powerPreference: "high-performance"
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
+        camera.position.z = 30;
+
+        // Optimized 3D hearts (reduced count)
+        const hearts = [];
+        
+        function createHeartShape() {
+            const shape = new THREE.Shape();
+            const scale = 0.8;
+            
+            for (let i = 0; i <= Math.PI * 2; i += 0.2) { // Reduced precision for better performance
+                const x = (16 * Math.sin(i) ** 3) * scale;
+                const y = (13 * Math.cos(i) - 5 * Math.cos(2*i) - 2 * Math.cos(3*i) - Math.cos(4*i)) * scale * -0.15;
+                if (i === 0) shape.moveTo(x, y);
+                else shape.lineTo(x, y);
+            }
+            
+            return shape;
+        }
+
+        const heartShape = createHeartShape();
+        const heartGeometry = new THREE.ShapeGeometry(heartShape);
+        const heartMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0xFF69B4,
+            emissive: 0xFF1493,
+            shininess: 150,
+            wireframe: false
+        });
+
+        // Increased heart count for more beautiful effect
+        for (let i = 0; i < 25; i++) {
+            const heart = new THREE.Mesh(heartGeometry, heartMaterial);
+            heart.position.x = (Math.random() - 0.5) * 100;
+            heart.position.y = (Math.random() - 0.5) * 100;
+            heart.position.z = (Math.random() - 0.5) * 40;
+            heart.velocity = {
+                x: (Math.random() - 0.5) * 0.3, // Reduced speed
+                y: (Math.random() - 0.5) * 0.3,
+                z: (Math.random() - 0.5) * 0.2
+            };
+            heart.rotationSpeed = {
+                x: (Math.random() - 0.5) * 0.02, // Reduced rotation speed
+                y: (Math.random() - 0.5) * 0.02,
+                z: (Math.random() - 0.5) * 0.02
+            };
+            scene.add(heart);
+            hearts.push(heart);
+        }
+
+        // Optimized butterflies (reduced count)
+        const butterflies = [];
+        
+        function createButterflyGeometry() {
+            const group = new THREE.Group();
+            
+            const wingGeometry = new THREE.SphereGeometry(1.2, 6, 6); // Reduced geometry detail
+            const wingMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0xFF69B4,
+                emissive: 0xFF6EC7,
+                shininess: 100
+            });
+            
+            const leftWing = new THREE.Mesh(wingGeometry, wingMaterial);
+            leftWing.scale.set(1.3, 0.9, 0.2);
+            leftWing.position.x = -1;
+            group.add(leftWing);
+            
+            const rightWing = new THREE.Mesh(wingGeometry, wingMaterial);
+            rightWing.scale.set(1.3, 0.9, 0.2);
+            rightWing.position.x = 1;
+            group.add(rightWing);
+            
+            const bodyGeometry = new THREE.CylinderGeometry(0.4, 0.4, 2, 6); // Reduced detail
+            const bodyMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0xFFD700,
+                emissive: 0xFFA500,
+                shininess: 150
+            });
+            const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+            group.add(body);
+            
+            return group;
+        }
+
+        // Reduced butterfly count from 12 to 6
+        for (let i = 0; i < 6; i++) {
+            const butterfly = createButterflyGeometry();
+            butterfly.position.x = (Math.random() - 0.5) * 120;
+            butterfly.position.y = (Math.random() - 0.5) * 120;
+            butterfly.position.z = (Math.random() - 0.5) * 50;
+            butterfly.velocity = {
+                x: (Math.random() - 0.5) * 0.2, // Reduced speed
+                y: (Math.random() - 0.5) * 0.2,
+                z: (Math.random() - 0.5) * 0.15
+            };
+            butterfly.wingFlap = Math.random() * Math.PI * 2;
+            scene.add(butterfly);
+            butterflies.push(butterfly);
+        }
+
+        // Optimized floating stars (reduced count)
+        const stars = [];
+        const starGeometry = new THREE.OctahedronGeometry(0.4, 0); // Reduced geometry detail
+        const starMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0xFFD700,
+            emissive: 0xFFA500,
+            shininess: 150
+        });
+
+        // Increased star count for more beautiful effect
+        for (let i = 0; i < 30; i++) {
+            const star = new THREE.Mesh(starGeometry, starMaterial);
+            star.position.x = (Math.random() - 0.5) * 120;
+            star.position.y = (Math.random() - 0.5) * 120;
+            star.position.z = (Math.random() - 0.5) * 50;
+            star.velocity = {
+                x: (Math.random() - 0.5) * 0.2, // Reduced speed
+                y: (Math.random() - 0.5) * 0.2,
+                z: 0
+            };
+            scene.add(star);
+            stars.push(star);
+        }
+
+        // Enhanced lighting
+        const light1 = new THREE.PointLight(0xFF69B4, 1.5, 200);
+        light1.position.set(30, 30, 30);
+        scene.add(light1);
+
+        const light2 = new THREE.PointLight(0xFFD700, 1.5, 200);
+        light2.position.set(-30, -30, 30);
+        scene.add(light2);
+
+        const light3 = new THREE.PointLight(0xC868FF, 1, 150);
+        light3.position.set(0, 0, 50);
+        scene.add(light3);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        scene.add(ambientLight);
+
+        // 3D Animated Shooting Stars
+        const shootingStars = [];
+        
+        function createShootingStar() {
+            const starGroup = new THREE.Group();
+            
+            // Main star body
+            const starGeometry = new THREE.SphereGeometry(0.3, 8, 6);
+            const starMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0xFFD700,
+                emissive: 0xFFA500,
+                shininess: 100,
+                transparent: true,
+                opacity: 0.9
+            });
+            const star = new THREE.Mesh(starGeometry, starMaterial);
+            starGroup.add(star);
+            
+            // Star trail particles with more particles for enhanced effect
+            const trailGeometry = new THREE.BufferGeometry();
+            const trailPositions = new Float32Array(60 * 3); // 60 particles, 3 coordinates each
+            const trailColors = new Float32Array(60 * 3);
+            
+            for (let i = 0; i < 60; i++) {
+                trailPositions[i * 3] = -i * 0.3; // x (closer spacing for more particles)
+                trailPositions[i * 3 + 1] = 0; // y
+                trailPositions[i * 3 + 2] = 0; // z
+                
+                // Fade trail from bright to transparent
+                const fade = 1 - (i / 60);
+                trailColors[i * 3] = fade; // r
+                trailColors[i * 3 + 1] = fade * 0.8; // g
+                trailColors[i * 3 + 2] = fade * 0.3; // b
+            }
+            
+            trailGeometry.setAttribute('position', new THREE.BufferAttribute(trailPositions, 3));
+            trailGeometry.setAttribute('color', new THREE.BufferAttribute(trailColors, 3));
+            
+            const trailMaterial = new THREE.PointsMaterial({
+                size: 0.1,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                blending: THREE.AdditiveBlending
+            });
+            
+            const trail = new THREE.Points(trailGeometry, trailMaterial);
+            starGroup.add(trail);
+            
+            // Glow effect
+            const glowGeometry = new THREE.SphereGeometry(1, 16, 16);
+            const glowMaterial = new THREE.MeshBasicMaterial({
+                color: 0xFFD700,
+                transparent: true,
+                opacity: 0.2,
+                blending: THREE.AdditiveBlending
+            });
+            const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+            starGroup.add(glow);
+            
+            // Position randomly
+            starGroup.position.set(
+                (Math.random() - 0.5) * 150,
+                (Math.random() - 0.5) * 150,
+                Math.random() * 100
+            );
+            
+            // Random velocity
+            starGroup.velocity = new THREE.Vector3(
+                (Math.random() - 0.5) * 2,
+                (Math.random() - 0.5) * 2,
+                -Math.random() * 3 - 1
+            );
+            
+            starGroup.userData = {
+                life: 1.0,
+                maxLife: 1.0,
+                trail: trail,
+                glow: glow
+            };
+            
+            return starGroup;
+        }
+
+        // Create initial shooting stars (more for better visual effect)
+        for (let i = 0; i < 15; i++) {
+            const shootingStar = createShootingStar();
+            scene.add(shootingStar);
+            shootingStars.push(shootingStar);
+        }
+
+        // Optimized animation loop with frame limiting
+        let lastTime = 0;
+        const targetFPS = 30; // Limit to 30 FPS for better performance
+        const frameInterval = 1000 / targetFPS;
+
+        function animate(currentTime) {
+            requestAnimationFrame(animate);
+
+            if (currentTime - lastTime >= frameInterval) {
+                // Update hearts (optimized)
+            hearts.forEach((heart, idx) => {
+                heart.position.x += heart.velocity.x;
+                heart.position.y += heart.velocity.y;
+                heart.position.z += heart.velocity.z;
+                heart.rotation.x += heart.rotationSpeed.x;
+                heart.rotation.y += heart.rotationSpeed.y;
+                heart.rotation.z += heart.rotationSpeed.z;
+
+                if (Math.abs(heart.position.x) > 80) heart.velocity.x *= -1;
+                if (Math.abs(heart.position.y) > 80) heart.velocity.y *= -1;
+                if (Math.abs(heart.position.z) > 50) heart.velocity.z *= -1;
+                
+                    // Simplified pulse animation
+                    const pulse = 0.8 + Math.sin(currentTime * 0.002 + idx * 0.5) * 0.2;
+                heart.scale.set(pulse, pulse, pulse);
+            });
+
+                // Update butterflies (optimized)
+                butterflies.forEach((butterfly) => {
+                butterfly.position.x += butterfly.velocity.x;
+                butterfly.position.y += butterfly.velocity.y;
+                butterfly.position.z += butterfly.velocity.z;
+                    butterfly.rotation.y += 0.02;
+                    butterfly.rotation.z += 0.008;
+                
+                    butterfly.wingFlap += 0.08; // Reduced wing flap speed
+                butterfly.children.forEach((child, i) => {
+                    if (i < 2) {
+                            child.rotation.z = Math.sin(butterfly.wingFlap) * 0.4; // Reduced wing movement
+                    }
+                });
+
+                if (Math.abs(butterfly.position.x) > 100) butterfly.velocity.x *= -1;
+                if (Math.abs(butterfly.position.y) > 100) butterfly.velocity.y *= -1;
+                if (Math.abs(butterfly.position.z) > 60) butterfly.velocity.z *= -1;
+            });
+
+                // Update stars (optimized)
+                stars.forEach((star, idx) => {
+                    star.position.x += star.velocity.x;
+                    star.position.y += star.velocity.y;
+                    star.position.z += star.velocity.z;
+                    star.rotation.x += 0.02;
+                    star.rotation.y += 0.02;
+                    
+                    // Simplified scale animation
+                    const scale = 0.8 + Math.sin(currentTime * 0.003 + idx * 0.3) * 0.2;
+                    star.scale.set(scale, scale, scale);
+
+                    if (Math.abs(star.position.x) > 100) star.velocity.x *= -1;
+                    if (Math.abs(star.position.y) > 100) star.velocity.y *= -1;
+                    if (Math.abs(star.position.z) > 60) star.velocity.z *= -1;
+                });
+
+                // Update 3D shooting stars
+                for (let i = shootingStars.length - 1; i >= 0; i--) {
+                    const shootingStar = shootingStars[i];
+                    const userData = shootingStar.userData;
+                    
+                    // Update position
+                    shootingStar.position.add(shootingStar.velocity);
+                    
+                    // Update trail
+                    const trail = userData.trail;
+                    const trailPositions = trail.geometry.attributes.position.array;
+                    const trailColors = trail.geometry.attributes.color.array;
+                    
+                    // Shift trail positions
+                    for (let j = trailPositions.length - 3; j > 0; j -= 3) {
+                        trailPositions[j] = trailPositions[j - 3]; // x
+                        trailPositions[j + 1] = trailPositions[j - 2]; // y
+                        trailPositions[j + 2] = trailPositions[j - 1]; // z
+                        
+                        // Fade trail colors
+                        const fade = Math.max(0, 1 - (trailPositions.length - j) / trailPositions.length);
+                        trailColors[j] = fade;
+                        trailColors[j + 1] = fade * 0.8;
+                        trailColors[j + 2] = fade * 0.3;
+                    }
+                    
+                    // Update trail start position
+                    trailPositions[0] = 0;
+                    trailPositions[1] = 0;
+                    trailPositions[2] = 0;
+                    
+                    trail.geometry.attributes.position.needsUpdate = true;
+                    trail.geometry.attributes.color.needsUpdate = true;
+                    
+                    // Rotate star
+                    shootingStar.rotation.z += 0.1;
+                    
+                    // Update glow intensity
+                    userData.glow.material.opacity = 0.1 + Math.sin(currentTime * 0.005) * 0.1;
+                    
+                    // Reduce life
+                    userData.life -= 0.005;
+                    shootingStar.scale.setScalar(userData.life);
+                    
+                    // Remove if dead or out of bounds
+                    if (userData.life <= 0 || shootingStar.position.z < -50) {
+                        scene.remove(shootingStar);
+                        shootingStars.splice(i, 1);
+                        
+                        // Maintain up to 20 shooting stars for better effect
+                        if (shootingStars.length < 20 && Math.random() < 0.5) { // 50% chance to spawn new one
+                            const newStar = createShootingStar();
+                            scene.add(newStar);
+                            shootingStars.push(newStar);
+                        }
+                    }
+                }
+                
+                // Auto-spawn shooting stars to maintain count
+                if (shootingStars.length < 12 && Math.random() < 0.02) { // Minimum 12 stars
+                    const newStar = createShootingStar();
+                    scene.add(newStar);
+                    shootingStars.push(newStar);
+                }
+
+                renderer.render(scene, camera);
+                lastTime = currentTime;
+            }
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Create floating CSS butterflies
+        function createFloatingButterflies() {
+            const butterflies = ['🦋', '🦋', '🦋', '🦋', '🦋', '🦋', '🦋', '🦋'];
+            butterflies.forEach((butterfly, index) => {
+                const div = document.createElement('div');
+                div.className = 'floating-butterfly';
+                div.textContent = butterfly;
+                div.style.left = Math.random() * 100 + '%';
+                div.style.top = Math.random() * 100 + '%';
+                div.style.animationDelay = index * 1.5 + 's';
+                div.style.animationDuration = (12 + Math.random() * 6) + 's';
+                document.body.appendChild(div);
+            });
+        }
+
+        createFloatingButterflies();
+        
+        
+
+        // Add interactive sparkle effect to image stickers
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageStickers = document.querySelectorAll('.image-sticker');
+            
+            imageStickers.forEach(sticker => {
+                // Add click interaction
+                sticker.addEventListener('click', function() {
+                    const rect = this.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    // Create sparkle effect
+                    const sparkle = document.createElement('div');
+                    sparkle.textContent = '✨';
+                    sparkle.style.position = 'fixed';
+                    sparkle.style.left = centerX + 'px';
+                    sparkle.style.top = centerY + 'px';
+                    sparkle.style.fontSize = '3em';
+                    sparkle.style.zIndex = '999';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.animation = 'sparkleExplosion 1s ease-out forwards';
+                    document.body.appendChild(sparkle);
+                    
+                    // Trigger enhanced confetti at sticker location
+                    triggerEnhancedConfetti(centerX, centerY);
+                    
+                    // Trigger some shooting stars
+                    if (Math.random() < 0.7) {
+                        setTimeout(() => triggerShootingStars(), 300);
+                    }
+                    
+                    setTimeout(() => sparkle.remove(), 1000);
+                });
+
+                // Add hover effect
+                sticker.addEventListener('mouseenter', function() {
+                    this.style.filter = 'drop-shadow(0 0 30px rgba(255, 105, 180, 1)) brightness(1.2)';
+                });
+
+                sticker.addEventListener('mouseleave', function() {
+                    this.style.filter = 'drop-shadow(0 0 15px rgba(255, 105, 180, 0.7))';
+                });
+            });
+        });
+
+        // Add sparkle explosion animation
+        const sparkleStyle = document.createElement('style');
+        sparkleStyle.textContent = `
+            @keyframes sparkleExplosion {
+                0% {
+                    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+                    opacity: 1;
+                }
+                50% {
+                    transform: translate(-50%, -50%) scale(1.5) rotate(180deg);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(2) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(sparkleStyle);
+
+        // Scroll progress
+        const progressBar = document.querySelector('#progressBar .bar');
+        window.addEventListener('scroll', () => {
+            const scrollPercent = (document.documentElement.scrollTop / 
+                (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        });
+
+        // Memory items data with your uploaded photos
+        const memories1 = {
+            title: "The First Pic of Us ❤️ (#1)",
+            caption: "The First Pic of Us 💕",
+            photo: "photo/1.jpg",
+            content: "Do you remember this picture? 📸 The very first one we ever took together—25th November 2022, a Friday. That day feels so alive in my memory. We were at EG Hall during the last period. I was sitting at the back of the class, and you were in the first row. I came forward just to see you, but my bad luck—you were only there for a little while before some staff called you away. 😔<br><br>I waited, my heart quietly hoping you'd come back. 💖 And then the bell rang, and there you were, walking back to class. We shared a smile, and in that moment, everything around me seemed to pause. ⏸️ You went down the steps with Akshaya, and I followed, my heart racing faster than ever. 💓 I had always wanted to ask you for a picture, but my courage wasn't enough… until Katheeb dared me. That gave me the push I needed to finally ask. 💪<br><br>When I asked, you said yes. My heart almost jumped out of my chest! 💥 That moment, standing there with you, felt like the world had narrowed down to just us. 🌍➡️👫 I came closer, and you were holding a pad with a letter. I asked what it was. You said it was for the hostel and that you were going home. 🏠 I already knew you were from Kanyakumari, but to keep the conversation alive, I asked where exactly. You said Nagarcoil. I was shocked! 😲<br><br>Then Akshaya asked if we were going to take the picture. Nervously, I said, 'Huh, you go home; let's take it another day.' Oh, why did I say that? 😅 My heart wanted the picture more than anything. But then you told me your bus was at 6:00 pm, and we could take it then. It felt like fate was smiling at me that day. 😇<br><br>We finally took the picture. That moment—standing there with you—it's etched in my heart forever. 💎 From the day I met you, I have always wanted to ask 'Did you get on the bus? Did you reach home safely?' and I still do, even now. 🚌❤️ That first picture of us—it's more than just a photo. It's a memory, a feeling, a heartbeat I'll never forget. 💓✨"
+        };
+        const memories2 = {
+            title: "Our First Outing ❤️ (#2)",
+            caption: "Our First Outing 💕",
+            photo: "photo/2.jpg",
+            content: "It was our very first outing together! 🎉 We went as a group, but somehow, it still felt like it was just us. 💕 I still remember it was the day after our semester results. Of course, that whole plan happened only because of you. You had shared what happened with Devi Priya, and that's when I came up with the idea of this outing. 💡<br><br>The biggest challenge was your hostel permission but Geetha, your dad, wow… 😍 he actually came all the way from your hometown to college just to sign and send you for the outing. I can never forget that. Honestly, I had made a lot of backup plans for that day—I even thought of bringing my mom as your 'mom,' and I asked Jothi's mom to act as your guardian. But when your dad came, everything became easier. It felt like fate itself wanted you to be there that day. 🌟<br><br>We went to Phoenix Mall—our first outing together! 🏬 I still remember how much effort I put in just to make it happen. I came all the way from my home to college, then from college to the mall, then to Tambaram, and finally back home again. Yes, the mall was actually closer to my place, but that day, it wasn't about the distance—it was about you. 💖 Every step, every moment, every second of that day was worth it, because you were there. 👑<br><br>Then we went for Fast X. Honestly, that was the first movie where I didn't watch the screen—because you were sitting beside me. 🎬💕 You and me, together… that moment was everything. I still remember when I held your hand—just a small touch, but it meant the world to me. My heart was racing, and in that instant, I didn't want time to move. ⏰💓"
+        };
+        const memories3 = {
+            title: "Once, When It Was Only You and Me 💛 (#3)",
+            caption: "Once, When It Was Only You and Me 💛",
+            photo: "photo/3.jpg",
+            content: "Do you remember this day? ☀️ The first time it was just you and me, away from everyone else—at the Java canteen. It might sound simple, but for me, it was something I had dreamed of for so long. 💭 It was the first and last time we were truly alone, and maybe that's why it still lives in my heart so clearly. 💎<br><br>You bought your food, smiling like you always do, and I still remember standing there thinking how someone could look so perfect doing something so ordinary. 😍 Then I treated you to a vanilla ice cream—that small moment felt like a lifetime to me. 🍦💕 The way you looked at me, the soft laugh you gave, the way the sunlight touched your hair—everything about that day felt different. ✨<br><br>It wasn't about the canteen or the ice cream. It was about you—your presence, your calmness, your voice. 🎵 For those few minutes, the world felt quiet, like it was just you and me. 🤫💖 I didn't say much that day, but inside, my heart was screaming how lucky I felt to just be beside you. 💓<br><br>Even now, that memory plays in my mind like a favorite song—soft, sweet, and untouchable. 🎶 Can we go out again, Geetha? Just you and me, like before? Because even a few minutes with you can fill my heart for years. 💛"
+        };
+        const memories4 = {
+            title: "That Day Wasn't About the Movie ❤️ (#4)",
+            caption: "That Day Wasn't About the Movie 💖",
+            photo: "photo/4.jpg",
+            content: "Do you remember this pic? 📸 It was Leo movie day—another group outing, yet for me, it was always about you. 💕 We had planned it at Rohini theater, which was actually just the next stop from my home. Still, the only thing on my mind that morning was, 'How will my Geetha come?' 🤔<br><br>So, I woke up early, came all the way to college, just to pick you up at the station. 🚉 From there, we went to St. Mount and took the metro to Rohini. You have no idea how happy I was—not because of the plan or the movie, but just because I got to travel with you again. 🎉<br><br>When we reached, everyone turned veg 😅 As it was Saturday, Akshaya and Charu decided to eat veg—but I knew you, Geetha. You really wanted to eat non-veg. So me, Deepika, and Pranav sneaked off to Wow Momos and had our little feast. 🍽️ And the whole time, I couldn't stop thinking how perfect it would've been if you were there with me. 💭<br><br>Then at the theater… oh Geetha, I wanted to sit beside you so badly, but fate didn't listen that time. 😔 Still, watching you enjoy, laugh, and even dance—it was everything. 💃 I can never forget that moment. It was your first time dancing in a theater, and it was not the first time for me, but the first time with you—and that made all the difference. ✨<br><br>After the movie, we came back by train. Gokul said, 'Hemnath will be complete only when he drops Geetha at her hostel.' He was right. 😊 I smiled because I knew, deep down, walking with you from the station to your hostel was my favorite part of the day. 🚶‍♂️💕"
+        };
+        const memories5 = {
+            title: "The Iconic Pic: My Prayer to You ❤️ (#5)",
+            caption: "The Iconic Pic: My Prayer to You 💞",
+            photo: "photo/5.jpg",
+            content: "This is an iconic pic, paa. 📸 It was during our Tamil Manram, and I was also in the dance. 💃 You weren't able to dance that day, and honestly, it made me a little sad. 😔 But that photo… oh, that photo turned out amazing. ✨<br><br>I really wanted to take a picture with you, so I stood near you. Then Barani jokingly told me to kneel down to you. 😅 Wait, what? I was ready to do it—anything, just to be closer to you, just to show you how much you mean to me. 💕 In my heart, that moment felt like I was silently praying to you for love, and in that picture, it almost looks like you were blessing me. 🙏✨<br><br>Then Barani said, jokingly, to put your leg on your head. My heart skipped a beat! 💓 I was ready for it—just to make you smile, just to be playful with you. 😳 But of course, you refused… and We didn't do it. Still, just thinking about it now makes me laugh and melt at the same time. 😄💕 The truth is, even a silly moment like that felt intensely special to me, because it was you. 🌟"
+        };
+        const memories6 = {
+            title: "The First Birthday I Got to Celebrate With You 🎂 (#6)",
+            caption: "The First Birthday I Got to Celebrate With You 🎂",
+            photo: "photo/6.jpg",
+            content: "This day was two years ago—the first time we all celebrated your birthday together! 🎉 I had already decided on your nickname for the cake, though I was still a little shy to actually put 'Kolandhaa' on it. 😊 But in the end, that's exactly what went on the cake—your lovable nickname, and of course, it was all my plan. 💡<br><br>You were absolutely gorgeous that day… I still remember how my heart skipped seeing you smile. 💓 I even couldn't resist adding a little cake to your face 😅 I know, I know… you probably hated me for that. But secretly, I knew you enjoyed it—the way you laughed, the playful look in your eyes. It made my heart soar, just seeing you happy. 😍<br><br>I was a little sad that you didn't give me a bite of the cake at first. 😔 But later, when I watched the video, I saw it—you gave the first bite! 😍 Meanwhile, I was busy playing with the snow spray, trying to make the day more fun for you. 🎊<br><br>That birthday, Geetha… it wasn't just a celebration. It was a day I realized even more how much you mean to me. 💕 Every laugh, every little smile, every playful moment—it made me fall for you a little more. 💖 I'll never forget how magical that day felt, being near you, celebrating you, my Kolandhaa. ✨"
+        };
+        const memories7 = {
+            title: "The Last Outing Before Everything Changed 🏖️ (#7)",
+            caption: "The Last Outing Before Everything Changed 🏖️",
+            photo: "photo/7.jpg",
+            content: "This pic was taken at Mahabalipuram—our last outing together before I proposed to you. 🏖️ It was our farthest outing, and our very first beach outing together. At first, I sat a little sad on the beach, lost in my thoughts. 😔 You noticed me right away and asked, 'Why didn't you come in the water?' 💙 I tried to hide the pain and said I was tired… but inside, my heart melted. Oh wow… my Geetha was thinking of me. 💕<br><br>Even in that little moment, I felt so happy, so cared for. 💖 And yes, as you know, that was the day I hated Gokul 😅, but the Mahabs itself was amazing. The waves, the sand, the breeze—it all felt like it was celebrating us. 🌊☀️<br><br>Later, we went to the restaurant for some Thika Biriyani. 🍛 During lunch, I finally got the chance to sit beside you. My heart was racing! 💓 We took some pictures of the restaurant, and Ajay even clicked some special pics of us together. 📸 I loved those moments—the way we smiled, the way we were just sitting next to each other… every photo felt like it captured a piece of my heart. 💎<br><br>Even though a small part of me still felt a little distance, the happiness of being beside you, sharing laughs, teasing, and enjoying simple things like lunch made everything perfect. ✨ That day was full of laughter, love, and tiny magical moments—your laughter echoing with the waves, your playful nudges, the way you looked at me like I mattered. 💛"
+        };
+        const memories8 = {
+            title: "Vinai Thandhi Varuvai Yaa 💛 (#8)",
+            caption: "Vinai Thandhi Varuvai Yaa 💛",
+            photo: "photo/8.jpg",
+            content: "This day… I will never forget it. 💎 It was the first outing we had after I proposed to you, and it felt so special, so delicate, like every moment mattered twice as much. 💕 We had a big fight before, and for a moment, I really thought we might never be together again. 😢 But deep inside, a little hope lingered. 🌟<br><br>It was Charu's plan—though I still don't know why she organized it. 🤔 For me, it was a dream come true—a bucket list moment to watch Vinai Thandhi Varuvai Yaa with my loved one, and that someone was you. 🎬💖 We planned everything at Slice of Life—the whole plan of October 1 revolved around being close to you, enjoying simple moments together. 🍕<br><br>That morning, I planned lunch at my house. It was a simple veg meal, but seeing you there, laughing, enjoying, and looking at all my childhood pictures made my heart overflow. 💓 I promised myself that one day, I'll invite you for a non-veg meal too—a little extra treat for my Kolandha, my love. 💕 The song 'Enodu Vaa, En Vithai Pudikum' played in my head the whole time, as if it were singing for us. 🎵<br><br>Then came the movie. Sitting beside you after so long, after I had confessed my feelings, my heart was racing with every beat. 💓 The movie was emotional, and the dialogues reminded me of us—our fights, our love, and our little struggles. 💔➡️💕 That day… sitting beside you after proposing, sharing lunch, watching the movie, feeling every emotion with you—it became one of the most precious and romantic moments of my life. 💛"
+        };
+        const memories9 = {
+            title: "The Last Long Drive Pondicherry 😢 (#9)",
+            caption: "The Last Long Drive Pondicherry 😢",
+            photo: "photo/9.jpg",
+            content: "This pic was taken at Pondicherry—a long travel day, and I knew you didn't enjoy it as much. 😔 I'm really sorry Paa… I felt like I was being forceful that day, and I hate that I made you uncomfortable. Please forgive me. 🙏<br><br>Even though the day was tough, there were happy moments too. 😊 I took so many pictures of you—every smile, every candid moment—trying to capture the little pieces of joy in that day. 📸💕 It was also the last day with Katheeb iPhone, and the funny memory when you slipped in the mud and said, 'It was scripted!' 😄 I laughed so much, and I'll never forget your playful spirit. ✨<br><br>That was the last long drive we went on together. 🚗 After that, I felt some distance between us, because I thought you hated me… and I'm truly sorry for feeling that way. 😔 Still, even in that distance, I always carried the memory of you—your laughter, your playful energy, and the little moments that made my heart love you even more. 💛"
+        };
+        const memories10 = {
+            title: "The Mirror of Architecture ✨ (#10)",
+            caption: "The Mirror of Architecture ✨",
+            photo: "photo/10.jpg",
+            content: "Oh, this day… I'll never forget it. 💎 After such a long gap, everything finally felt normal again. 💕 We went to Java and took a group photo at the Mirror of Architecture building—just the four of us: you, me, Ajay, and Naveen. 📸 But my heart longed for a moment with you alone, so I asked softly, 'Can we take a couple pic?' And you said yes. 💖<br><br>I moved from right to left to get that perfect shot with you, my heart beating fast, and then of course, Ajay had to photobomb 😅. 'What da, now you're on the right, now on the left!' he teased. We didn't have words to tell him to go, but your smile through that little chaos made my heart soar. 😍 Even as I tried to hide the little ache I felt, seeing you happy made everything feel lighter. ✨<br><br>Naveen went out of the frame, but it didn't matter… because for that brief moment, it was just you and me. 💕 Your laughter, your playful glance, the way you smiled at me through the camera—it felt like the world had paused, and all that existed was us. 🌍➡️👫 That day, that picture, that memory… it captured so much more than a photo. It captured my heart, my longing, my love for you. 💛"
+        };
+        const memories11 = {
+            title: "12AM & You 💫 (#11)",
+            caption: "12AM & You 💫",
+            photo: "photo/11.jpg",
+            content: "Geetha… this pic will always stay close to my heart. 💖 It's not just a picture—it's a story of every birthday I ever wished to spend with you. 🎂💕<br><br>In 2023, you came to college but felt dizzy and went back to the hostel. That day felt incomplete without you. 😔 Then in 2024, you were there with me, but when I cut the cake and looked for you, you had already left. Still, you gave me my first birthday gift—that perfume. 🎁 I still have it, and I'll always keep it safe. Every time I see it, it reminds me of you—your presence, your care, your warmth. 💝<br><br>And this year 2025—you made it truly special. ✨ You were the only person who wished me right at 12 AM. The day began with your message, and honestly, that one wish made my entire birthday feel perfect. 🎉 You even tried your best to make Charu come, and even though she didn't, I know the effort you put in and that meant the world to me. 🌍💕<br><br>That video you made, those words you said—I'll never forget them. 💎 The AirPods you gifted me aren't just things, Geetha… they're memories, emotions, and a little piece of you that I'll always treasure. 🎧💖<br><br>I'm sorry da… I gave you the last bite of the cake. I really wanted you to have the first one. Because to me, you were always the first—my first thought every morning and the reason behind so many of my smiles. ☀️💕<br><br>When I saw you that day, smiling softly, it felt like time froze. And in that silence, my heart said what it's been holding for so long: <strong>I love you, Geetha. 💖</strong>"
+        };
+
+        // Then, if you want to display them all:
+        const memoriesList = [memories1, memories2, memories3, memories4, memories5, memories6, memories7, memories8, memories9, memories10, memories11];
+
+        const scrapbook = document.getElementById('scrapbook');
+        memoriesList.forEach((memory, index) => {
+            const item = document.createElement('div');
+            item.className = 'memory-item';
+            item.innerHTML = `
+                <div class="photo-frame">
+                    <div class="photo-polaroid">
+                        <div class="photo-placeholder" style="background-image: url('${memory.photo}'); background-position: top center;">
+                        </div>
+                        <div class="photo-caption">${memory.caption}</div>
+                    </div>
+                </div>
+                <div class="story-box">
+                    <div class="story-title">${memory.title}</div>
+                    <div class="story-content">${memory.content}</div>
+                </div>
+            `;
+            scrapbook.appendChild(item);
+        });
+
+        // Intersection observer for fade-in
+        const memoryItems = document.querySelectorAll('.memory-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        memoryItems.forEach(item => observer.observe(item));
+
+        // Simple Music player with auto-play
+        const music = document.getElementById('backgroundMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const musicIcon = document.querySelector('.music-icon');
+        let isPlaying = false;
+
+        // Auto-play music with user interaction
+        function enableAudio() {
+            music.muted = false;
+            music.play().then(() => {
+                musicIcon.textContent = '⏸️';
+                isPlaying = true;
+            }).catch(() => {
+                musicIcon.textContent = '🔇';
+                isPlaying = false;
+            });
+        }
+
+        // Try to play music automatically
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                enableAudio();
+            }, 1000);
+        });
+
+        // Enable audio on first user interaction
+        document.addEventListener('click', enableAudio, { once: true });
+        document.addEventListener('touchstart', enableAudio, { once: true });
+
+        musicToggle.addEventListener('click', () => {
+            if (music.paused || music.muted) {
+                music.muted = false;
+                music.play().catch(() => {
+                    musicIcon.textContent = '🔇';
+                });
+                musicIcon.textContent = '⏸️';
+                isPlaying = true;
+            } else {
+                music.muted = true;
+                musicIcon.textContent = '🎵';
+                isPlaying = false;
+            }
+        });
+
+        // Enhanced Dynamic Effects Functions
+        function triggerShootingStars() {
+            // Create 3D shooting stars (increased for more effect)
+            for (let i = 0; i < 12; i++) {
+                setTimeout(() => {
+                    if (shootingStars.length < 20) {
+                        const newStar = createShootingStar();
+                        scene.add(newStar);
+                        shootingStars.push(newStar);
+                    }
+                }, i * 150);
+            }
+            
+            // Also create some 2D shooting stars for extra effect (increased count)
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    create2DShootingStar();
+                }, i * 200);
+            }
+        }
+        
+        // Enhanced confetti burst
+        function triggerEnhancedConfetti(x = null, y = null) {
+            const centerX = x || window.innerWidth / 2;
+            const centerY = y || window.innerHeight / 2;
+            
+            const confettiTypes = [
+                { type: 'heart', content: '💖' },
+                { type: 'heart', content: '💕' },
+                { type: 'star', content: '⭐' },
+                { type: 'star', content: '✨' },
+                { type: 'regular', content: '' }
+            ];
+            
+            // Increased confetti count for more spectacular effect
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    const type = confettiTypes[Math.floor(Math.random() * confettiTypes.length)];
+                    
+                    confetti.className = 'confetti ' + type.type;
+                    if (type.content) {
+                        confetti.textContent = type.content;
+                    }
+                    
+                    confetti.style.left = (centerX + (Math.random() - 0.5) * 200) + 'px';
+                    confetti.style.top = (centerY - 50) + 'px';
+                    confetti.style.animationDuration = (3 + Math.random() * 2) + 's';
+                    confetti.style.animationDelay = (Math.random() * 0.5) + 's';
+                    
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 30);
+            }
+        }
+
+        function create2DShootingStar() {
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.top = Math.random() * window.innerHeight + 'px';
+            star.style.left = '-100px';
+            star.style.animationDuration = (2 + Math.random() * 2) + 's';
+            
+            document.body.appendChild(star);
+            
+            setTimeout(() => star.remove(), 4000);
+        }
+
+        function triggerBalloons() {
+            const balloons = ['🎈', '🎈', '🎈', '🎈', '🎈'];
+            balloons.forEach((balloon, index) => {
+                setTimeout(() => {
+                    createBalloon(balloon);
+                }, index * 200);
+            });
+        }
+
+        function createBalloon(emoji) {
+            const balloon = document.createElement('div');
+            balloon.className = 'floating-balloon';
+            balloon.innerHTML = emoji;
+            balloon.style.left = Math.random() * window.innerWidth + 'px';
+            balloon.style.top = window.innerHeight + 'px';
+            balloon.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.body.appendChild(balloon);
+            
+            setTimeout(() => balloon.remove(), 8000);
+        }
+
+        function createGlowingOrbs() {
+            for (let i = 0; i < 6; i++) {
+                setTimeout(() => {
+                    const orb = document.createElement('div');
+                    orb.className = 'glowing-orb';
+                    orb.style.left = Math.random() * window.innerWidth + 'px';
+                    orb.style.top = Math.random() * window.innerHeight + 'px';
+                    orb.style.animationDelay = Math.random() * 4 + 's';
+                    orb.style.animationDuration = (3 + Math.random() * 3) + 's';
+                    
+                    document.body.appendChild(orb);
+                }, i * 1000);
+            }
+        }
+
+        function createMagicDust(x, y) {
+            for (let i = 0; i < 8; i++) {
+                const dust = document.createElement('div');
+                dust.className = 'magic-dust';
+                dust.style.left = (x + (Math.random() - 0.5) * 100) + 'px';
+                dust.style.top = (y + (Math.random() - 0.5) * 100) + 'px';
+                dust.style.animationDelay = Math.random() * 1 + 's';
+                
+                document.body.appendChild(dust);
+                
+                setTimeout(() => dust.remove(), 2000);
+            }
+        }
+
+        
+        // Show placeholder images if actual images don't load
+        document.addEventListener('DOMContentLoaded', () => {
+            const stickers = document.querySelectorAll('.image-sticker');
+            stickers.forEach((sticker, index) => {
+                // Create a colored placeholder if image fails to load
+                sticker.addEventListener('error', function() {
+                    const colors = ['#FF69B4', '#FFD700', '#C868FF'];
+                    this.style.backgroundColor = colors[index % 3];
+                    this.style.display = 'flex';
+                    this.style.alignItems = 'center';
+                    this.style.justifyContent = 'center';
+                    this.style.fontSize = '2em';
+                    this.innerHTML = '📸';
+                    this.style.objectFit = 'contain';
+                });
+                
+                // Add click to open lightbox
+                sticker.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openLightbox(this.src);
+            });
+        });
+            
+            // Initialize dynamic elements
+            createPulsingBackgrounds();
+            createFloatingElements();
+            addMouseHeartTrail();
+            addSparklesToElements();
+            createGlowingOrbs();
+            
+            // Add magic dust on click
+            document.addEventListener('click', function(e) {
+                if (Math.random() < 0.3) { // 30% chance
+                    createMagicDust(e.clientX, e.clientY);
+                }
+            });
+            
+            // Add rainbow text effect to story titles
+            const storyTitles = document.querySelectorAll('.story-title');
+            storyTitles.forEach(title => {
+                title.classList.add('rainbow-text', 'glow-text');
+            });
+            
+            // Add wave effect to signature
+            const signature = document.querySelector('.signature');
+            if (signature) {
+                signature.classList.add('glow-text');
+            }
+        });
+
+        // Optimized Confetti System
+        function triggerConfetti() {
+            const colors = ['#FF69B4', '#FFD700', '#C868FF', '#FF1493', '#FFA500'];
+            
+            // Reduced confetti count from 50 to 25 for better performance
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    createConfetti(colors[Math.floor(Math.random() * colors.length)]);
+                }, i * 30); // Increased delay between confetti pieces
+            }
+        }
+
+        function createConfetti(color) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.background = color;
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+            confetti.style.animationDelay = Math.random() * 0.5 + 's';
+            
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+
+        // Lightbox System
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            
+            lightboxImage.src = imageSrc;
+            lightbox.classList.add('active');
+            
+            // Add sparkles around lightbox
+            createLightboxSparkles();
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Close lightbox when clicking outside image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Optimized sparkles around lightbox
+        function createLightboxSparkles() {
+            // Reduced sparkle count from 20 to 10 for better performance
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = Math.random() * window.innerWidth + 'px';
+                    sparkle.style.top = Math.random() * window.innerHeight + 'px';
+                    sparkle.style.animationDelay = Math.random() * 2 + 's';
+                    
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 2500); // Shorter duration
+                }, i * 150); // Increased delay between sparkles
+            }
+        }
+
+        // Optimized Mouse Heart Trail
+        let heartTrail = [];
+        let lastHeartTime = 0;
+        
+        function addMouseHeartTrail() {
+            document.addEventListener('mousemove', function(e) {
+                const currentTime = Date.now();
+                // Increased frequency for more beautiful effect: create hearts every 200ms with 30% chance
+                if (currentTime - lastHeartTime > 200 && Math.random() < 0.30) {
+                    createFloatingHeart(e.clientX, e.clientY);
+                    lastHeartTime = currentTime;
+                }
+            });
+        }
+
+        function createFloatingHeart(x, y) {
+            const hearts = ['💕', '💖', '💗', '💓', '❤️'];
+            const selectedHeart = hearts[Math.floor(Math.random() * hearts.length)];
+            
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = selectedHeart;
+            heart.style.left = x + (Math.random() - 0.5) * 20 + 'px';
+            heart.style.top = y + (Math.random() - 0.5) * 20 + 'px';
+            heart.style.animationDelay = Math.random() * 0.5 + 's';
+            heart.style.fontSize = (20 + Math.random() * 15) + 'px';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 2000);
+        }
+
+        // Optimized Pulsing Background Elements
+        function createPulsingBackgrounds() {
+            // Reduced from 5 to 3 for better performance
+            for (let i = 0; i < 3; i++) {
+                const pulseBg = document.createElement('div');
+                pulseBg.className = 'pulse-bg';
+                pulseBg.style.width = (150 + Math.random() * 200) + 'px'; // Smaller sizes
+                pulseBg.style.height = pulseBg.style.width;
+                pulseBg.style.left = Math.random() * window.innerWidth + 'px';
+                pulseBg.style.top = Math.random() * window.innerHeight + 'px';
+                pulseBg.style.animationDelay = Math.random() * 4 + 's';
+                
+                document.body.appendChild(pulseBg);
+            }
+        }
+
+        // Optimized Floating Elements
+        function createFloatingElements() {
+            const elements = ['✨', '💫', '⭐', '🌟', '💖', '🎀', '🎈'];
+            
+            // Reduced from 15 to 8 for better performance
+            for (let i = 0; i < 8; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+                element.style.fontSize = (1 + Math.random() * 1.5) + 'em'; // Smaller sizes
+                element.style.left = Math.random() * window.innerWidth + 'px';
+                element.style.top = Math.random() * window.innerHeight + 'px';
+                element.style.animationDelay = Math.random() * 8 + 's';
+                element.style.animationDuration = (8 + Math.random() * 4) + 's'; // Longer duration
+                
+                document.body.appendChild(element);
+            }
+        }
+
+        // Add sparkles to interactive elements
+        function addSparklesToElements() {
+            const interactiveElements = document.querySelectorAll('.story-box, .intro-section, .final-message');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    createElementSparkles(this);
+                });
+            });
+        }
+
+        function createElementSparkles(element) {
+            const rect = element.getBoundingClientRect();
+            
+            // Reduced sparkle count from 8 to 4 for better performance
+            for (let i = 0; i < 4; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                sparkle.style.top = (rect.top + Math.random() * rect.height) + 'px';
+                sparkle.style.animationDelay = Math.random() * 1 + 's';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 1500); // Shorter duration
+            }
+        }
+
+        // Enhanced Photo Interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            const photoPlaceholders = document.querySelectorAll('.photo-placeholder');
+            
+            photoPlaceholders.forEach(photo => {
+                photo.addEventListener('click', function() {
+                    const imgSrc = this.style.backgroundImage.slice(5, -2); // Remove url("") wrapper
+                    openLightbox(imgSrc);
+                });
+                
+                // Add hover sparkle effect
+                photo.addEventListener('mouseenter', function() {
+                    createPhotoSparkles(this);
+                });
+            });
+        });
+
+        function createPhotoSparkles(photo) {
+            const rect = photo.getBoundingClientRect();
+            
+            // Reduced sparkle count from 6 to 3 for better performance
+            for (let i = 0; i < 3; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                sparkle.style.top = (rect.top + Math.random() * rect.height) + 'px';
+                sparkle.style.animationDelay = Math.random() * 0.5 + 's';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 1200); // Shorter duration
+            }
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+            if (e.key === ' ') { // Spacebar for confetti
+                e.preventDefault();
+                triggerConfetti();
+            }
+        });
+
+        // Auto-trigger effects on page load
+        setTimeout(() => {
+            triggerConfetti();
+        }, 2000);
+        
+        setTimeout(() => {
+            triggerShootingStars();
+        }, 4000);
+        
+        setTimeout(() => {
+            triggerBalloons();
+        }, 6000);
+    </script>
+</body>
+</html>
